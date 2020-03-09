@@ -89,30 +89,8 @@ public class Driver extends JPanel implements ActionListener, KeyListener
 		for (int i = 0; i < car2.length; i++) {
 
 			car2[i].setVx(-3);
-
 			car2[i].move();
-			// collision
-
-			if (froggy.collided(
-
-			car2[i].getX(), car2[i].getY(), car2[i].getWidth(),
-					car2[i].getHieght())) {
-
-				lost = "a life - collision";
-
-				System.out.println(lost);
-
-				if (my_variable > 0) {
-					froggy.setX(400);
-					froggy.setY(800);
-					my_variable--;
-				}
-
-				if (my_variable == 0) {
-					lost = "";
-					lose = "";
-				}
-			}
+			
 		}
 
 	}
@@ -169,17 +147,7 @@ public class Driver extends JPanel implements ActionListener, KeyListener
 			froggy.setVy(-5);
 		}
 
-		if (e.getKeyCode() == 40) {
-			froggy.setVy(5);
-		}
-
-		if (e.getKeyCode() == 37) {
-			froggy.setVx(-5);
-		}
-
-		if (e.getKeyCode() == 39) {
-			froggy.setVx(5);
-		}
+		
 
 	}
 
