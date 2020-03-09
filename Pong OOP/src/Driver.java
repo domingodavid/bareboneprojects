@@ -54,7 +54,6 @@ public class Driver extends JPanel implements ActionListener, KeyListener {
 		paddleLeft.move();
 		
 		if(ball2.collided(paddleLeft)){
-			
 			//set velocity (x) to its opposite
 			//use setter and getter of the ball
 			
