@@ -121,7 +121,7 @@ public class Driver extends JPanel implements ActionListener, KeyListener
 			car2[i] = new Car("carpic.png", i * 250 + 400, 350);
 		}
 
-		// player.addMouseListener(this);
+		//Add background
 		bg = new Background("background1.png");
 		// do not add to frame, call paint on
 		// these objects in paint method
@@ -144,7 +144,7 @@ public class Driver extends JPanel implements ActionListener, KeyListener
 		// 40 down,
 		// 39 ->
 		System.out.println("key is pressed");
-		if (e.getKeyCode() == 38) {
+		if (e.getKeyCode() == KeyEvent.VK_W) {
 			froggy.setVy(-5);
 		}
 
@@ -154,7 +154,9 @@ public class Driver extends JPanel implements ActionListener, KeyListener
 
 	@Override
 	public void keyReleased(KeyEvent e) {
-
+		/* turn off velocity for Frog if you don't want it moving when
+		 * you have stopped pressing the keys
+		 */
 		if (e.getKeyCode() == 38) {
 			froggy.setVy(0);
 			froggy.setVx(0);
@@ -165,15 +167,7 @@ public class Driver extends JPanel implements ActionListener, KeyListener
 			froggy.setVx(0);
 		}
 
-		if (e.getKeyCode() == 37) {
-			froggy.setVy(0);
-			froggy.setVx(0);
-		}
-
-		if (e.getKeyCode() == 39) {
-			froggy.setVy(0);
-			froggy.setVx(0);
-		}
+		//do the same thing for the other keys
 	}
 
 	@Override
