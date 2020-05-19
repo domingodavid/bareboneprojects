@@ -68,9 +68,10 @@ public class Froggy {
 	// gets image and procces it
 
 	public void move() {
-		tx.translate(vx, vy);
+		
 		y += vy;
 		x += vx;
+		tx.setToTranslation(x, y);
 
 	}
 
@@ -79,7 +80,9 @@ public class Froggy {
 	// draw the affine transform
 	public void paint(Graphics g) {
 		Graphics2D g2 = (Graphics2D) g;
+		move(); //ask frog to update its location variables
 		g2.drawImage(img, tx, null);
+		
 	}
 
 	private void init(double a, double b) {
@@ -107,6 +110,7 @@ public class Froggy {
 
 	public void setVy(int vy) {
 		this.vy = vy;
+		
 	}
 
 	public int getX() {

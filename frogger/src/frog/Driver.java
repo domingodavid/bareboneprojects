@@ -52,21 +52,22 @@ public class Driver extends JPanel implements ActionListener, KeyListener
 		g.drawString(("Lives:") + Integer.toString(my_variable), 0, 870);
 		g.setFont(font2);
 
-		// paint sprite
-
+		// paint sprites for carss
 		for (int i = 0; i < car2.length; i++) {
 			car2[i].paint(g);
 		}
 
+		//paint and update froggy 
 		froggy.paint(g);
 
 		// car one
 		g.drawString(lost, 0, 50);
-
 		if (my_variable == 0) {
 			lose = " u lost";
 			g.drawString(lose, 0, 50);
 		}
+		
+		//resetting
 		if (my_variable > 0 && froggy.getY() == 0) {
 			lose = "";
 			win = "u won!";
@@ -142,7 +143,7 @@ public class Driver extends JPanel implements ActionListener, KeyListener
 		// 38 up ,
 		// 40 down,
 		// 39 ->
-
+		System.out.println("key is pressed");
 		if (e.getKeyCode() == 38) {
 			froggy.setVy(-5);
 		}
